@@ -51,12 +51,26 @@ public class Producto {
         this.precio = precio;
     }
 
+    /*
+         Funcion: Valida que un valor no sea null.
+         Argumento: - valor (Object): Valor a validar.
+                    - mensajeCampo (String): Mensaje de error en caso de que el valor sea null.
+         Objetivo: Lanzar una excepción si el valor es null.
+         Retorno: No retorna ningún valor.
+    */
     private void validarNoNull(Object valor, String mensajeCampo) {
         if (valor == null) {
             throw new IllegalArgumentException(mensajeCampo + " no puede ser null");
         }
     }
 
+    /*
+       Funcion: Valida que el precio no sea negativo.
+       Argumento: - precio (double): Precio a validar.
+                  - mensajeCampo (String): Mensaje de error en caso de que el precio sea negativo.
+       Objetivo: Lanzar una excepción si el precio es negativo.
+       Retorno: No retorna ningún valor.
+    */
     private void validarPrecioNoNegativo(double precio, String mensajeCampo) {
         if (precio < 0) {
             throw new IllegalArgumentException(mensajeCampo + " no puede ser negativo");

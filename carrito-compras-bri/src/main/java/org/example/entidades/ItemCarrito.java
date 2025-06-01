@@ -34,11 +34,27 @@ public class ItemCarrito {
         validarCantidadNoNegativa(cantidad, "Cantidad");
         this.cantidad = cantidad;
     }
+
+    /*
+        Funcion: Valida que un valor no sea null.
+        Argumento: - valor (Object): Valor a validar.
+                - mensajeCampo (String): Mensaje de error en caso de que el valor sea null.
+        Objetivo: Lanzar una excepción si el valor es null.
+        Retorno: No retorna ningún valor.
+    */
     private void validarNoNull(Object valor, String mensajeCampo) {
         if (valor == null) {
             throw new IllegalArgumentException(mensajeCampo + " no puede ser null");
         }
     }
+
+    /*
+        Funcion: Valida que una cantidad no sea negativa.
+        Argumento: - cantidad (int): Cantidad a validar.
+              - mensajeCampo (String): Mensaje de error en caso de que la cantidad sea negativa.
+        Objetivo: Lanzar una excepción si la cantidad es negativa.
+        Retorno: No retorna ningún valor.
+     */
     private void validarCantidadNoNegativa(int cantidad, String mensajeCampo) {
         if (cantidad < 0) {
             throw new IllegalArgumentException(mensajeCampo + " no puede ser negativa");
