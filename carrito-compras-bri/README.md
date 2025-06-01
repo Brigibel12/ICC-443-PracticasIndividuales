@@ -7,7 +7,7 @@
 Este proyecto es una implementación sencilla de un **Carrito de Compras** en Java, que incluye:  
 - Las clases de dominio: `Producto`, `ItemCarrito` y `Carrito`.  
 - Validaciones básicas en cada clase para garantizar integridad de datos.  
-- Pruebas unitarias con **JUnit 5** para verificar el correcto funcionamiento de cada componente.  
+- Pruebas unitarias con **JUnit** para verificar el correcto funcionamiento de cada componente.  
 
 El objetivo es demostrar buenas prácticas de programación orientada a objetos, uso de colecciones y prácticas de testing con JUnit.
 
