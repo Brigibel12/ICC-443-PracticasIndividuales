@@ -45,7 +45,7 @@ public class CarritoCompra {
     */
     public void agregarProducto(Producto producto, int cantidad) {
         validarNoNull(producto, "Item");
-        validarCantidadNoNegativa(cantidad, "Cantidad");
+        validarCantidadMayorACero(cantidad, "Cantidad");
 
         for (ItemCarrito ic : items) {
             if (ic.getProducto().equals(producto)) {
@@ -130,6 +130,19 @@ public class CarritoCompra {
     private void validarCantidadNoNegativa(int cantidad, String mensajeCampo) {
         if (cantidad < 0) {
             throw new IllegalArgumentException(mensajeCampo + " no puede ser negativa");
+        }
+    }
+
+    /*
+        Funcion: Valida que una cantidad sea mayor que cero.
+        Argumento: - cantidad (int): Cantidad a validar.
+              - mensajeCampo (String): Mensaje de error en caso de que la cantidad sea menor o igual a cero.
+        Objetivo: Lanzar una excepción si la cantidad es menor o igual a cero.
+        Retorno: No retorna ningún valor.
+     */
+    private void validarCantidadMayorACero(int cantidad, String mensajeCampo) {
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException(mensajeCampo + " no puede ser menor o igual a cero");
         }
     }
 }

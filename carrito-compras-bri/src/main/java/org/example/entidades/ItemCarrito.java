@@ -13,7 +13,7 @@ public class ItemCarrito {
     */
     public ItemCarrito(Producto producto, int cantidad) {
         validarNoNull(producto, "Producto");
-        validarCantidadNoNegativa(cantidad, "Cantidad");
+        validarCantidadMayorACero(cantidad, "Cantidad");
         this.producto = producto;
         this.cantidad = cantidad;
     }
@@ -31,7 +31,7 @@ public class ItemCarrito {
         return cantidad;
     }
     public void setCantidad(int cantidad) {
-        validarCantidadNoNegativa(cantidad, "Cantidad");
+        validarCantidadMayorACero(cantidad, "Cantidad");
         this.cantidad = cantidad;
     }
 
@@ -49,15 +49,15 @@ public class ItemCarrito {
     }
 
     /*
-        Funcion: Valida que una cantidad no sea negativa.
+        Funcion: Valida que una cantidad sea mayor que cero.
         Argumento: - cantidad (int): Cantidad a validar.
-              - mensajeCampo (String): Mensaje de error en caso de que la cantidad sea negativa.
-        Objetivo: Lanzar una excepción si la cantidad es negativa.
+              - mensajeCampo (String): Mensaje de error en caso de que la cantidad sea menor o igual a 0.
+        Objetivo: Lanzar una excepción si la cantidad es negativa o si es igual a cero.
         Retorno: No retorna ningún valor.
      */
-    private void validarCantidadNoNegativa(int cantidad, String mensajeCampo) {
-        if (cantidad < 0) {
-            throw new IllegalArgumentException(mensajeCampo + " no puede ser negativa");
+    private void validarCantidadMayorACero(int cantidad, String mensajeCampo) {
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException(mensajeCampo + " no puede ser negativa ni igual a cero");
         }
     }
 
