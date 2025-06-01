@@ -18,7 +18,7 @@ public class TestCarritoCompra {
     @Before
     public void setup() {
         carrito = new CarritoCompra();
-        prodA = new Producto("A1", "Receptor", 100.0);
+        prodA = new Producto("A1", "Mouse", 100.0);
         prodB = new Producto("B2", "Teclado", 50.0);
     }
 
